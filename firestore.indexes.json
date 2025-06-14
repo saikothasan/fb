@@ -56,17 +56,22 @@
         { "fieldPath": "createdAt", "order": "DESCENDING" }
       ]
     }
-    // Add more indexes as needed based on common filter combinations
-    // e.g., if filtering by userId AND status:
-    // {
-    //   "collectionGroup": "scans",
-    //   "queryScope": "COLLECTION",
-    //   "fields": [
-    //     { "fieldPath": "userId", "order": "ASCENDING" },
-    //     { "fieldPath": "status", "order": "ASCENDING" },
-    //     { "fieldPath": "createdAt", "order": "DESCENDING" }
-    //   ]
-    // }
+    {
+      "collectionGroup": "posts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "published", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "posts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "slug", "order": "ASCENDING" },
+        { "fieldPath": "published", "order": "ASCENDING" }
+      ]
+    }
   ],
   "fieldOverrides": []
 }
